@@ -1,0 +1,30 @@
+1.进入C:\Windows\system32
+2.连续按下"c","m","d"三个键
+3.选中cmd.exe, 复制到桌面，改名osk.exe
+4.回到system32，同上方法找到osk.exe
+5.右键，属性>安全>高级>上方所有者点击"更改"
+6.选users或Administrators,如无直接输入并添加
+7.回到小的安全窗口，点编辑
+8.点击Administrators或users，下方勾选完全控制，确定全部窗口
+9.将桌面的osk.exe拖入system32中覆盖
+10.按win+L，进入登录界面（部分机房设有密码sjz）
+11.不要登录，点击左下角的按钮，勾选屏幕键盘，确定。
+
+这时你就得到了一个命令窗口，输入cmd，回车。
+
+运行以下指令
+taskkill /f /im gatesrv.exe
+taskkill /f /im masterhelper.exe
+sc stop tdnetfilter
+sc stop tdfilefilter
+你的电脑现在已可以正常连接网络
+
+如果老师控屏，你可以如下操作
+1.cmd输入notepad，回车
+2.选择 打开
+3.右下角调整为所有文件
+4.找到C:\Program Files（x86）\mythware\极域…\libtdprochook64.dll，右键，重命名成任意不同名字，对32做同样处理
+5.cmd输入resmon回车
+6.找到studentmain.exe，右键结束
+
+开始冲浪吧！
